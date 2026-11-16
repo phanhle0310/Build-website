@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-ivory: #f6f2e9;
+  --color-paper: #fffdf8;
+  --color-ink: #25251f;
+  --color-walnut: #553d2d;
+  --color-sage: #73806d;
+  --color-mist: #dfe3d8;
+  --font-sans: "DM Sans", sans-serif;
+  --font-serif: "Instrument Serif", serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: #f6f2e9;
+    color: #25251f;
+    font-family: "DM Sans", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: #73806d;
+    color: #fffdf8;
+  }
+
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    outline-offset: 3px;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .page-shell {
+    width: min(100% - 2rem, 80rem);
+    margin-inline: auto;
+  }
+
+  .eyebrow {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .reveal {
+    animation: reveal 0.7s ease both;
+  }
+
+  .delay-1 {
+    animation-delay: 0.12s;
+  }
+
+  .delay-2 {
+    animation-delay: 0.24s;
+  }
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    animation: none;
+  }
+}
